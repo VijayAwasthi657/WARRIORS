@@ -428,7 +428,7 @@ function authMiddleware(
     }
 
     //QUERY TOKEN
-       Optional support
+     //  Optional support
 
     if (
       !token &&
