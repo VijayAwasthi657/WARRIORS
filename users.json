@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1788831751656-kad5819l",
+    "userId": "WARRIR123",
+    "name": "Vijay Awasthi",
+    "email": "vijay.awasthi657@gmail.com",
+    "passwordHash": "$2b$12$dcYLYNgQUIFZTqcCTd/AserqBQZhV6ipn6xMeTG6uAhkZdy8dxO0C",
+    "role": "user",
+    "createdAt": "2026-09-08T01:42:31.656Z"
+  },
+  {
+    "id": "1788844776562-pqn8x8z2",
+    "userId": "VIJ123",
+    "name": "Vijay Awasthi",
+    "email": "awasthivijay657@gmail.com",
+    "passwordHash": "$2b$12$lXjmTBe0okWLrIbSmO.t9el5Dldztdyro3VKWgVML9JBkguflrK72",
+    "role": "user",
+    "createdAt": "2026-09-08T05:19:36.562Z"
+  },
+  {
+    "id": "1788845115331-k5be5ll4",
+    "userId": "ILMA123",
+    "name": "ilma parveen",
+    "email": "ilmaparveen941592@gmail.com",
+    "passwordHash": "$2b$12$d00vJ/aHR/e5hLG1DYSZ8eFc9eM/jku5wPgiiKenfGUHthok3pvDu",
+    "role": "user",
+    "createdAt": "2026-09-08T05:25:15.331Z"
+  },
+  {
+    "id": "1788845449523-zk4a1dd0",
+    "userId": "SEJAL123",
+    "name": "Sejal Singh",
+    "email": "singhsejal80988@gmail.com",
+    "passwordHash": "$2b$12$nAfqdO57WIOP0awi.FaL1uMaVfGZ6mi6o3v2fXSQfWXxW5ziy1dDu",
+    "role": "user",
+    "createdAt": "2026-09-08T05:30:49.523Z"
+  },
+  {
+    "id": "1788845857914-v84adi2c",
+    "userId": "VIBHUTI123",
+    "name": "vibhuti mishra",
+    "email": "mishravibhuti1208@gmail.com",
+    "passwordHash": "$2b$12$y9D7EUWTbBbWbKPbzXWZhu3CJ3g6SHkl1PPN4KcQt5Hl.limziZ12",
+    "role": "user",
+    "createdAt": "2026-09-08T05:37:37.914Z"
+  }
+]

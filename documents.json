@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1788818488899-963575319",
+    "name": "smart.xlsx",
+    "storedName": "1788818488882-195078458.xlsx",
+    "type": "XLSX",
+    "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "size": 10374,
+    "uploadedAt": "2026-09-07T22:01:28.899Z",
+    "url": "http://localhost:5000/uploads/1788818488882-195078458.xlsx"
+  },
+  {
+    "id": "1788818465236-572692069",
+    "name": "VIJAY AWASTHI2 - Copy.docx",
+    "storedName": "1788818465215-369570068.docx",
+    "type": "DOCX",
+    "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "size": 44177,
+    "uploadedAt": "2026-09-07T22:01:05.236Z",
+    "url": "http://localhost:5000/uploads/1788818465215-369570068.docx"
+  }
+]
