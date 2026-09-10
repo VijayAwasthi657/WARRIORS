@@ -16,15 +16,11 @@ const db = require("./database");
 
 const app = express();
 
-/* =========================
-   SERVER PORT
-========================= */
+// SERVER PORT
 
 const PORT = process.env.PORT || 5000;
 
-/* =========================
-   MIDDLEWARE
-========================= */
+// MIDDLEWARE
 
 app.use(
   cors({
@@ -35,9 +31,7 @@ app.use(
 
 app.use(express.json());
 
-/* =========================
-   DIRECTORIES
-========================= */
+// DIRECTORIES
 
 const uploadDirectory = path.join(
   __dirname,
@@ -50,9 +44,7 @@ if (!fs.existsSync(uploadDirectory)) {
   });
 }
 
-/* =========================
-   MULTER STORAGE
-========================= */
+// MULTER STORAGE
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -80,9 +72,7 @@ const upload = multer({
   },
 });
 
-/* =========================
-   HOME / HEALTH CHECK
-========================= */
+// HOME / HEALTH CHECK
 
 app.get("/", (req, res) => {
   res.json({
@@ -91,9 +81,7 @@ app.get("/", (req, res) => {
   });
 });
 
-/* =========================
-   REGISTER
-========================= */
+// REGISTER
 
 app.post("/api/register", async (req, res) => {
   try {
@@ -141,9 +129,7 @@ app.post("/api/register", async (req, res) => {
   }
 });
 
-/* =========================
-   LOGIN
-========================= */
+// LOGIN
 
 app.post("/api/login", async (req, res) => {
   try {
@@ -189,9 +175,7 @@ app.post("/api/login", async (req, res) => {
   }
 });
 
-/* =========================
-   CURRENT USER
-========================= */
+// CURRENT USER
 
 app.get(
   "/api/me",
@@ -237,9 +221,7 @@ app.get(
   }
 );
 
-/* =========================
-   UPLOAD DOCUMENTS
-========================= */
+// UPLOAD DOCUMENTS
 
 app.post(
   "/api/documents/upload",
@@ -356,9 +338,7 @@ app.post(
   }
 );
 
-/* =========================
-   GET USER DOCUMENTS
-========================= */
+// GET USER DOCUMENTS
 
 app.get(
   "/api/documents",
@@ -427,7 +407,8 @@ app.get(
 
       return res.json({
         success: true,
-        documents: validDocuments,
+        documents:
+          validDocuments,
       });
     } catch (error) {
       console.error(
@@ -444,9 +425,7 @@ app.get(
   }
 );
 
-/* =========================
-   PREVIEW DOCUMENT
-========================= */
+// PREVIEW DOCUMENT
 
 app.get(
   "/api/documents/:id/file",
@@ -519,9 +498,7 @@ app.get(
   }
 );
 
-/* =========================
-   DOWNLOAD DOCUMENT
-========================= */
+// DOWNLOAD DOCUMENT
 
 app.get(
   "/api/documents/:id/download",
@@ -584,9 +561,7 @@ app.get(
   }
 );
 
-/* =========================
-   MOVE TO TRASH
-========================= */
+// MOVE TO TRASH
 
 app.post(
   "/api/documents/:id/trash",
@@ -649,9 +624,7 @@ app.post(
   }
 );
 
-/* =========================
-   GET TRASH
-========================= */
+// GET TRASH
 
 app.get(
   "/api/trash",
@@ -731,9 +704,7 @@ app.get(
   }
 );
 
-/* =========================
-   RESTORE
-========================= */
+// RESTORE
 
 app.post(
   "/api/trash/:id/restore",
@@ -792,9 +763,7 @@ app.post(
   }
 );
 
-/* =========================
-   PERMANENT DELETE
-========================= */
+// PERMANENT DELETE
 
 app.delete(
   "/api/trash/:id",
@@ -863,9 +832,7 @@ app.delete(
   }
 );
 
-/* =========================
-   MULTER / SERVER ERROR
-========================= */
+// MULTER / SERVER ERROR
 
 app.use(
   (error, req, res, next) => {
@@ -893,36 +860,40 @@ app.use(
   }
 );
 
-/* =========================
-   START SERVER
-========================= */
+// VERCEL EXPORT
 
-app.listen(
-  PORT,
-  "0.0.0.0",
-  () => {
-    console.log("");
-    console.log(
-      "===================================="
-    );
-    console.log(
-      "          SecureDMS Backend"
-    );
-    console.log(
-      "===================================="
-    );
-    console.log(
-      `Server running on port ${PORT}`
-    );
-    console.log(
-      `Upload folder: ${uploadDirectory}`
-    );
-    console.log(
-      "Users file: ./data/users.json"
-    );
-    console.log(
-      "Database: ./data/securedms.db"
-    );
-    console.log("");
-  }
-);
+module.exports = app;
+
+// LOCAL DEVELOPMENT SERVER
+
+if (require.main === module) {
+  app.listen(
+    PORT,
+    "0.0.0.0",
+    () => {
+      console.log("");
+      console.log(
+        "===================================="
+      );
+      console.log(
+        "          SecureDMS Backend"
+      );
+      console.log(
+        "===================================="
+      );
+      console.log(
+        `Server running on port ${PORT}`
+      );
+      console.log(
+        `Upload folder: ${uploadDirectory}`
+      );
+      console.log(
+        "Users file: ./data/users.json"
+      );
+      console.log(
+        "Database: ./data/securedms.db"
+      );
+      console.log("");
+    }
+  );
+}
